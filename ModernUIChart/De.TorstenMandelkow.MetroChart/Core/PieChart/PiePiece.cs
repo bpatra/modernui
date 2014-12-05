@@ -502,34 +502,32 @@
                     pointerMoreOuter = new Point(pointOuterCircle.X + 20, pointOuterCircle.Y);
                 }
 
+
                 PathSegmentCollection linesegments = new PathSegmentCollection();
-                //linesegments.Add(new LineSegment() { Point = pointOnCircle });
                 linesegments.Add(new LineSegment() { Point = pointOuterCircle });
                 linesegments.Add(new LineSegment() { Point = pointerMoreOuter });
 
                 Path linesegmentPath = new Path()
                 {
                     StrokeLineJoin = PenLineJoin.Round,
-                    Stroke = new SolidColorBrush() { Color = Colors.Black },
+                    Stroke = new SolidColorBrush() { Color = Colors.Red },
                     StrokeThickness = 2.0d,
                     Data = new PathGeometry()
                     {
                         Figures = new PathFigureCollection()
+                    {
+                        new PathFigure()
                         {
-                            new PathFigure()
-                            {
-                                IsClosed = false,
-                                StartPoint = pointOnCircle,
-                                Segments = linesegments
-                            }
+                            IsClosed = false,
+                            StartPoint = pointOnCircle,
+                            Segments = linesegments
                         }
+                    }
                     }
                 };
                 SetValue(PiePiece.LineGeometryProperty, CloneDeep(linesegmentPath.Data as PathGeometry));
 
                 label.Measure(new Size(400, 400));
-                Size s = label.DesiredSize;
-                double x = this.Value;
 
                 label.SetValue(Canvas.TopProperty, pointerMoreOuter.Y - (label.DesiredSize.Height / 2.0));
                 if (pointerMoreOuter.X > center.X)
@@ -540,6 +538,9 @@
                 {
                     label.SetValue(Canvas.LeftProperty, pointerMoreOuter.X - (label.DesiredSize.Width));
                 }
+
+
+
                 //Geometry = segmentPath.Data;
 
                 // Segment MouseEnter Animation
