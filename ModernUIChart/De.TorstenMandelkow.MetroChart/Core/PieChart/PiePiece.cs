@@ -345,8 +345,6 @@
         {    
             try
             {
-                //Children.Clear();
-
                 if (this.ClientWidth <= 0.0)
                 {
                     return;
@@ -357,9 +355,6 @@
                 }
                 if (SumOfDataSeries > 0)
                 {
-                    double sss = this.ActualWidth;
-
-                    double x = this.ClientWidth;
                     double m_startpercent = StartValue / SumOfDataSeries * 100;
                     double m_endpercent = (StartValue + Value) / SumOfDataSeries * 100;
 
@@ -368,7 +363,6 @@
                     double startAngle = (360 / 100.0) * m_startpercent;
                     double endAngle = (360 / 100.0) * m_endpercent;
                     double radius = GetRadius();
-                    bool isLarge = (endAngle - startAngle) > 180.0;
 
                     LayoutSegment(startAngle, endAngle, radius, 0.25, center, true);
                 }
@@ -477,10 +471,6 @@
                 SetValue(PiePiece.GeometryProperty, CloneDeep(segmentPath.Data as PathGeometry));
                 SetValue(PiePiece.SelectionGeometryProperty, CloneDeep(segmentPath.Data as PathGeometry));
 
-
-                double inRadius = radius * 0.65;
-                double outRadius = radius * 1.25;
-
                 double midAngle = startAngle + ((endAngle - startAngle) / 2.0);
                 Point pointOnCircle = GetCircumferencePoint(midAngle, pieRadius, center.X, center.Y);
 
@@ -488,7 +478,6 @@
                 double distanceToCenter = Math.Abs(pointOnCircle.Y - center.Y);
                 double factor = distanceToCenter / center.Y;
 
-                double midAngleBefore = midAngle;
                 if ((GetQuadrant(pointOnCircle, center) == 1) || (GetQuadrant(pointOnCircle, center) == 3))
                 {   //point is in quadrant 1 center, we go further the end angle
                     midAngle = startAngle + ((endAngle - startAngle) / 2.0) + (((endAngle - startAngle) / 2.0) * factor);
@@ -532,9 +521,6 @@
                     }
                 };
                 SetValue(PiePiece.LineGeometryProperty, CloneDeep(linesegmentPath.Data as PathGeometry));
-
-                //SetValue(PiePiece.LabelXPosProperty, pointerMoreOuter.X);
-                //SetValue(PiePiece.LabelYPosProperty, pointerMoreOuter.Y);
 
                 label.Measure(new Size(400, 400));
                 Size s = label.DesiredSize;
