@@ -353,19 +353,24 @@
                 {
                     return;
                 }
+                double startAngle = 0;
+                double endAngle = 360;
                 if (SumOfDataSeries > 0)
                 {
                     double m_startpercent = StartValue / SumOfDataSeries * 100;
                     double m_endpercent = (StartValue + Value) / SumOfDataSeries * 100;
 
-                    Point center = GetCenter();
-
-                    double startAngle = (360 / 100.0) * m_startpercent;
-                    double endAngle = (360 / 100.0) * m_endpercent;
-                    double radius = GetRadius();
-
-                    LayoutSegment(startAngle, endAngle, radius, 0.25, center, true);
+                    startAngle = (360 / 100.0) * m_startpercent;
+                    endAngle = (360 / 100.0) * m_endpercent;                 
                 }
+                if (startAngle == 0 && endAngle == 360.0)
+                {
+                    endAngle = 359.999;
+                }
+                Point center = GetCenter();
+                double radius = GetRadius();
+
+                LayoutSegment(startAngle, endAngle, radius, 0.25, center, true);
             }
             catch (Exception ex)
             {
