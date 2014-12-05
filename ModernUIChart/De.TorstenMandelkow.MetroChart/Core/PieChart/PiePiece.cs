@@ -353,9 +353,11 @@
                 {
                     return;
                 }
+                
+                //by default a piece piece is 0 -> 360° (degenerated case SumOfDataSeries = 0)
                 double startAngle = 0;
                 double endAngle = 360;
-                if (SumOfDataSeries > 0)
+                if (SumOfDataSeries > 0) 
                 {
                     double m_startpercent = StartValue / SumOfDataSeries * 100;
                     double m_endpercent = (StartValue + Value) / SumOfDataSeries * 100;
@@ -363,7 +365,7 @@
                     startAngle = (360 / 100.0) * m_startpercent;
                     endAngle = (360 / 100.0) * m_endpercent;                 
                 }
-                if (startAngle == 0 && endAngle == 360.0)
+                if (startAngle == 0 && endAngle == 360.0) //Cannot render a 0 - 360 arc use a smallest value instead
                 {
                     endAngle = 359.999;
                 }
