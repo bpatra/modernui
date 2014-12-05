@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.WinRT", "TestApplication.WinRT\TestApplication.WinRT.csproj", "{DE51F78A-3783-4945-9D78-CE25F3BFA728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplicationWPF", "TestApplicationWPF\TestApplicationWPF.csproj", "{236C3E19-26D1-4C90-AF3D-A44696B641DE}"
@@ -29,47 +31,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplication.Shared", "TestApplication.Shared\TestApplication.Shared.csproj", "{BE0FB0DA-8BC0-4604-B865-F0DFC7E9FF10}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 10
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs04
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = De.TorstenMandelkow.MetroChart.SL\\De.TorstenMandelkow.MetroChart.SL.csproj
-		SccProjectTopLevelParentUniqueName1 = MetroChart.sln
-		SccProjectName1 = De.TorstenMandelkow.MetroChart.SL
-		SccLocalPath1 = De.TorstenMandelkow.MetroChart.SL
-		SccProjectUniqueName2 = De.TorstenMandelkow.MetroChart.WinRT\\De.TorstenMandelkow.MetroChart.WinRT.csproj
-		SccProjectTopLevelParentUniqueName2 = MetroChart.sln
-		SccProjectName2 = De.TorstenMandelkow.MetroChart.WinRT
-		SccLocalPath2 = De.TorstenMandelkow.MetroChart.WinRT
-		SccProjectUniqueName3 = De.TorstenMandelkow.MetroChart.WPF\\De.TorstenMandelkow.MetroChart.WPF.csproj
-		SccProjectTopLevelParentUniqueName3 = MetroChart.sln
-		SccProjectName3 = De.TorstenMandelkow.MetroChart.WPF
-		SccLocalPath3 = De.TorstenMandelkow.MetroChart.WPF
-		SccProjectUniqueName4 = De.TorstenMandelkow.MetroChart\\De.TorstenMandelkow.MetroChart.csproj
-		SccProjectName4 = De.TorstenMandelkow.MetroChart
-		SccLocalPath4 = De.TorstenMandelkow.MetroChart
-		SccProjectUniqueName5 = TestApplication.Shared\\TestApplication.Shared.csproj
-		SccProjectTopLevelParentUniqueName5 = MetroChart.sln
-		SccProjectName5 = TestApplication.Shared
-		SccLocalPath5 = TestApplication.Shared
-		SccProjectUniqueName6 = TestApplication.WinRT\\TestApplication.WinRT.csproj
-		SccProjectTopLevelParentUniqueName6 = MetroChart.sln
-		SccProjectName6 = TestApplication.WinRT
-		SccLocalPath6 = TestApplication.WinRT
-		SccProjectUniqueName7 = TestApplicationSL.Web\\TestApplicationSL.Web.csproj
-		SccProjectTopLevelParentUniqueName7 = MetroChart.sln
-		SccProjectName7 = TestApplicationSL.Web
-		SccLocalPath7 = TestApplicationSL.Web
-		SccProjectUniqueName8 = TestApplicationSL\\TestApplicationSL.csproj
-		SccProjectTopLevelParentUniqueName8 = MetroChart.sln
-		SccProjectName8 = TestApplicationSL
-		SccLocalPath8 = TestApplicationSL
-		SccProjectUniqueName9 = TestApplicationWPF\\TestApplicationWPF.csproj
-		SccProjectTopLevelParentUniqueName9 = MetroChart.sln
-		SccProjectName9 = TestApplicationWPF
-		SccLocalPath9 = TestApplicationWPF
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -172,11 +133,11 @@ Global
 		{6C68FA92-873E-485E-8019-0B5EA7567CF7}.Release|x64.ActiveCfg = Release|Any CPU
 		{6C68FA92-873E-485E-8019-0B5EA7567CF7}.Release|x86.ActiveCfg = Release|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|ARM.ActiveCfg = Debug|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|ARM.ActiveCfg = Release|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|x64.ActiveCfg = Release|Any CPU
 		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|x86.ActiveCfg = Release|Any CPU
@@ -195,13 +156,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{236C3E19-26D1-4C90-AF3D-A44696B641DE} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
-		{8F0A4417-85C6-4545-B9B2-5FF99035E369} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
-		{6C68FA92-873E-485E-8019-0B5EA7567CF7} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
 		{DE51F78A-3783-4945-9D78-CE25F3BFA728} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
-		{BE0FB0DA-8BC0-4604-B865-F0DFC7E9FF10} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
+		{236C3E19-26D1-4C90-AF3D-A44696B641DE} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
+		{229F48A7-2922-4F26-AFC7-6A2DCE096E90} = {5AF34993-CF54-45A1-A3E1-5EFDC7794BC1}
 		{4AB4B0DB-780C-48B9-A642-8E527353D957} = {5AF34993-CF54-45A1-A3E1-5EFDC7794BC1}
 		{46DD5FB9-30E3-488F-8FF5-13F33DC5A488} = {5AF34993-CF54-45A1-A3E1-5EFDC7794BC1}
-		{229F48A7-2922-4F26-AFC7-6A2DCE096E90} = {5AF34993-CF54-45A1-A3E1-5EFDC7794BC1}
+		{8F0A4417-85C6-4545-B9B2-5FF99035E369} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
+		{6C68FA92-873E-485E-8019-0B5EA7567CF7} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
+		{BE0FB0DA-8BC0-4604-B865-F0DFC7E9FF10} = {C1E46203-E3D8-47EE-B26F-39013E9F102C}
 	EndGlobalSection
 EndGlobal
