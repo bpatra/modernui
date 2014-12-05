@@ -409,7 +409,7 @@
             double x = centerx + radius * Math.Cos(angleRad);
             double y = centery + radius * Math.Sin(angleRad);
 
-            return new Point(Math.Ceiling(x), Math.Ceiling(y));
+            return new Point(x, y);
         }
 
         private void LayoutSegment(double startAngle, double endAngle, double radius, double gapScale, Point center, bool isDoughnut)
