@@ -1,4 +1,6 @@
-﻿namespace De.TorstenMandelkow.MetroChart
+﻿using System.Globalization;
+
+namespace De.TorstenMandelkow.MetroChart
 {
     using System;
     using System.Collections;
@@ -672,40 +674,40 @@
         }
 
 
-        private void GetBestValues(double wert, ref double bestMaxValue, ref int bestDivisor)
+        private void GetBestValues(double value, ref double bestMaxValue, ref int bestDivisor)
         {
-            string wertString = wert.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            string valueString = value.ToString(System.Globalization.CultureInfo.InvariantCulture);
             double tensBelowNull = 1;
 
-            if (wert <= 1)
+            if (value <= 1)
             {
                 //0.72  -> 0.8
                 //0.00145
                 //0.0007453 0> 7453
 
                 //count digits after comma
-                int digitsAfterComma = wertString.Replace("0.", "").Length;
+                int digitsAfterComma = valueString.Replace("0.", "").Length;
                 tensBelowNull = Math.Pow(10, digitsAfterComma);
-                wert = wert * tensBelowNull;
-                wertString = wert.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                value = value * tensBelowNull;
+                valueString = value.ToString(System.Globalization.CultureInfo.InvariantCulture);
             }
-            if (wertString.Contains("."))
+            if (valueString.Contains("."))
             {
-                wertString = wertString.Substring(0, wertString.IndexOf("."));
+                valueString = valueString.Substring(0, valueString.IndexOf("."));
             }
-            int digitsBeforeComma = wertString.Length;
-            int roundedValue = (int)Math.Ceiling(wert);
+            int digitsBeforeComma = valueString.Length;
+            int roundedValue = (int)Math.Ceiling(value);
             double tens = 0;
             if (digitsBeforeComma > 2)
             {
                 tens = Math.Pow(10, digitsBeforeComma - 2);
-                double wertWith2Digits = wert / tens;
-                roundedValue = (int)Math.Ceiling(wertWith2Digits);
+                double valueWith2Digits = value / tens;
+                roundedValue = (int)Math.Ceiling(valueWith2Digits);
             }
             else if (digitsBeforeComma == 1)
             {
                 tens = 0.1;
-                double wertWith2Digits = wert / tens;
+                double wertWith2Digits = value / tens;
                 roundedValue = (int)Math.Ceiling(wertWith2Digits);
             }
 
@@ -734,17 +736,17 @@
                 int[] divisors = new int[] { 2, 5, 10, 25 };
                 foreach (int divisor in divisors)
                 {
-                    int div = roundedValue % divisor;
-                    int mod = roundedValue / divisor;
+                    int mod = roundedValue % divisor;
+                    int div = roundedValue / divisor;
 
-                    if ((roundedValue < 10) && (mod == 1))
+                    if (roundedValue < 10 && div == 1 && roundedValue >= 4) //do not allow too small divisor ->at least 4 see 17286
                     {
                         return roundedValue;
                     }
 
-                    if ((div == 0) && (mod <= 10))
+                    if (mod == 0 && div <= 10 && div >= 4)//do not allow too small divisor ->at least 4 see 17286
                     {
-                        return mod;
+                        return div;
                     }
                 }
                 roundedValue = roundedValue + 1;
